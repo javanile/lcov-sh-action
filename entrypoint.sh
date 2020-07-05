@@ -15,7 +15,7 @@ remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/javanile/ci.lcov
 tmp=$(mktemp -d -t ci-lcov-sh-XXXXXXXXXX)
 
 mkdir -p ${tmp}/${GITHUB_REPOSITORY}
-mv -R coverage ${tmp}/${GITHUB_REPOSITORY}
+mv coverage ${tmp}/${GITHUB_REPOSITORY}
 
 cd ${tmp}
 git init
