@@ -22,5 +22,5 @@ git init
 git add ${GITHUB_REPOSITORY}/coverage
 git commit -m "Your message about the commit"
 git remote add origin "${remote_repo}"
-git push -u origin gh-pages
-git push origin gh-pages
+git push -u origin master
+git push origin master

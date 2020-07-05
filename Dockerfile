@@ -8,7 +8,7 @@ LABEL "com.github.actions.color"="blue"
 LABEL "repository"="https://github.com/javanile/ci-lcov-sh-action"
 LABEL "homepage"="https://github.com/javanile/ci-lcov-sh-action"
 LABEL "maintainer"="francescobianco"
-LABEL "release"="2"
+LABEL "release"="3"
 
 RUN apk --no-cache add openssl git curl openssh-client bash
     
