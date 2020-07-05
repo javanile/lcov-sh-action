@@ -7,9 +7,9 @@ if [ -z "${GITHUB_TOKEN}" ]; then
 fi
 
 # initialize git
-git config http.sslVerify false
-git config user.name "Automated Publisher"
-git config user.email "actions@users.noreply.github.com"
+git config --global http.sslVerify false
+git config --global user.name "Automated Publisher"
+git config --global user.email "actions@users.noreply.github.com"
 
 remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/javanile/ci.lcov.sh.git"
 tmp=$(mktemp -d -t ci-lcov-sh-XXXXXXXXXX)
