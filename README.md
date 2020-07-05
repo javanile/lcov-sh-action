@@ -8,7 +8,7 @@ that you'd then like to persist back into the repository.
 Usage:
 
 ```
-- uses: mikeal/publish-to-github-action@master
+- uses: javanile/ci-lcov-sh-action@master
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
