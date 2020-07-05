@@ -7,18 +7,20 @@ if [ -z "${GITHUB_TOKEN}" ]; then
 fi
 
 # initialize git
-remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git config http.sslVerify false
 git config user.name "Automated Publisher"
 git config user.email "actions@users.noreply.github.com"
-git remote add publisher "${remote_repo}"
-git show-ref # useful for debugging
-git branch --verbose
 
-# publish any new files
-git checkout master
-git add -A
-timestamp=$(date -u)
-git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}" || exit 0
-git pull --rebase publisher master
-git push publisher master
+remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/javanile/ci.lcov.sh.git"
+tmp=$(mktemp -d -t ci-lcov-sh-XXXXXXXXXX)
+
+mkdir ${tmp}/${GITHUB_REPOSITORY}
+mv -R coverage ${tmp}/${GITHUB_REPOSITORY}
+
+cd ${tmp}
+git init
+git add ${GITHUB_REPOSITORY}/coverage
+git commit -m "Your message about the commit"
+git remote add origin "${remote_repo}"
+git push -u origin gh-pages
+git push origin gh-pages
