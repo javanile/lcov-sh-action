@@ -1,4 +1,4 @@
-# `publish-to-github-action`
+# `ci-lcov-sh-action`
 
 A GitHub Action to push any local file changes, including new files, back to master.
 
