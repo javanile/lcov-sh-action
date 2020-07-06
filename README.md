@@ -1,9 +1,8 @@
-# `ci-lcov-sh-action`
+# `publish-to-ci-lcov-sh-action`
 
-A GitHub Action to push any local file changes, including new files, back to master.
+A GitHub Action to push code coverage report to <https://ci.lcov.sh>.
 
-This action is useful to put *after* other actions that modify files in the local checkout
-that you'd then like to persist back into the repository.
+This action is useful to share with our team all code coverage results after every review.
 
 Usage:
 
