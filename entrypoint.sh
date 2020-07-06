@@ -14,5 +14,5 @@ find coverage -type f | while IFS= read -r file; do
    curl -X "PUT" \
         -H "Authorization: token " \
         -d "{\"branch\": \"gh-pages\", \"message\": \"uploading a sample pdf\", \"content\": \"$(cat ${file} | base64 -w 0)\"}" \
-        -i "https://api.github.com/repos/javanile/ci.lcov.sh/contents/${GITHUB_TOKEN}/${GITHUB_REF}/$file"
+        -i "https://api.github.com/repos/javanile/ci.lcov.sh/contents/${GITHUB_REPOSITORY}/${GITHUB_REF}/$file"
 done
