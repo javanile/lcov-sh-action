@@ -12,7 +12,7 @@ git config --global user.name "Automated Publisher"
 git config --global user.email "actions@users.noreply.github.com"
 
 remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/javanile/ci.lcov.sh.git"
-tmp=$(mktemp -d -t ci-lcov-sh-XXXXXXXXXX)
+tmp=$(mktemp -d -t ci-lcov-sh-XXXXXX)
 
 mkdir -p ${tmp}/${GITHUB_REPOSITORY}
 mv coverage ${tmp}/${GITHUB_REPOSITORY}
@@ -22,5 +22,4 @@ git init
 git add ${GITHUB_REPOSITORY}/coverage
 git commit -m "Your message about the commit"
 git remote add origin "${remote_repo}"
-git push -u --force-with-lease origin master
-git push origin master
+git push --force origin master
