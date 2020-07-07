@@ -9,6 +9,7 @@ fi
 
 if [ ! -d "coverage" ]; then
     echo "error: coverage data not found"
+    ls
     exit 1
 fi
 
