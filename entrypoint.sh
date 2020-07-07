@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-[[ -z "${LCOV_DEBUG}" ]] || set -x
+if [[ -n "${LCOV_DEBUG}" ]]; then
+    PS4='+:${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]}: '
+    set -x
+fi
 
 if [ -z "${GITHUB_TOKEN}" ]; then
     echo "error: not found GITHUB_TOKEN"
@@ -25,6 +28,7 @@ upload() {
 
 curl https://img.shields.io/badge/coverage-90%25-green -o badge.svg && upload badge.svg
 
-find coverage -type f | while IFS= read -r file; do
+cd coverage
+find * -type f | while IFS= read -r file; do
     upload "${file}"
 done
