@@ -1,25 +1,21 @@
-name: Node CI
+name: coverage
 
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@master
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
-      with:
-        version: 10.x
-    - name: docker lint
-      run: |
-        npm install
-        npm run build --if-present
-        npm test
-    - uses: zbeekman/ShellCheck-Linter-Action@v1.0.1
-      name: shell linter
-    - uses: mikeal/publish-to-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+
+      - name: Run test with coverage
+        run: sudo apt install lcov && make coverage
+
+      - uses: javanile/lcov-sh-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}

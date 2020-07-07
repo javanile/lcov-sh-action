@@ -1,4 +1,6 @@
-# `publish-to-ci-lcov-sh-action`
+# lcov-sh-action
+
+[![coverage](https://ci.lcov.sh/javanile/lcov-sh-action/master/badge.svg)](https://ci.lcov.sh/javanile/lcov-sh-action/master)
 
 A GitHub Action to push code coverage report to <https://ci.lcov.sh>.
 
@@ -11,4 +13,3 @@ Usage:
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-

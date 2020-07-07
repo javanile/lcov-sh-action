@@ -12,3 +12,8 @@ test: build
 
 coverage: build
 	docker run --rm javanile/lcov-sh-action/test lcov.sh test/entrypoint.test.sh
+
+push:
+	git add .
+	git commit -am "push"
+	git push
