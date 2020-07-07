@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[[ -z "${LCOV_DEBUG}"]] || set -x
+[[ -z "${LCOV_DEBUG}" ]] || set -x
 
 if [ -z "${GITHUB_TOKEN}" ]; then
     echo "error: not found GITHUB_TOKEN"
