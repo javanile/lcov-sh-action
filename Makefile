@@ -14,6 +14,7 @@ coverage: build
 	docker run --rm javanile/lcov-sh-action/test lcov.sh test/entrypoint.test.sh
 
 push:
+	git config credential.helper 'cache --timeout=3600'
 	git add .
 	git commit -am "push"
 	git push
