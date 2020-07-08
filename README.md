@@ -4,7 +4,7 @@
 
 A GitHub Action to push code coverage report to <https://ci.lcov.sh>.
 
-This action is useful to share with our team all code coverage results after every review.
+This action is useful to share with your team every code coverage results after for better review.
 
 Usage:
 
