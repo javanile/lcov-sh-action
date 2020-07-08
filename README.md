@@ -1,6 +1,6 @@
 # lcov-sh-action
 
-[![coverage](https://ci.lcov.sh/javanile/lcov-sh-action/master/badge.svg)](https://ci.lcov.sh/javanile/lcov-sh-action/master)
+[![coverage](http://ci.lcov.sh/javanile/lcov-sh-action/master/badge.svg)](http://ci.lcov.sh/javanile/lcov-sh-action/master)
 
 A GitHub Action to push code coverage report to <https://ci.lcov.sh>.
 
